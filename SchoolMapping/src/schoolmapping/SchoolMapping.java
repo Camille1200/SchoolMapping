@@ -22,7 +22,7 @@ public class SchoolMapping {
     Database db = new Database();
     public static void main(String[] args) {
         // TODO code application logic here
-        SchoolMapping _this = new SchoolMapping();
+        //SchoolMapping _this = new SchoolMapping();
         //_this.addCoordinates(50, 10, 1, "john");
         //_this.addGuide(1,"Go to school", "john");
         //addPlace("Clinic", "https://www.google.com","john");
@@ -31,10 +31,12 @@ public class SchoolMapping {
         //updateGuide(2, 2, "go home", "john", 2);
         //updatePlace("Washroom", "https://www.facebook.com", "john", 1);
         //updateAdmin("OkayNo.1ito", "john", 1);
-        _this.loadAdmin();
-        _this.loadGuide();
-        _this.loadMapCoordinates();
-        _this.loadPlace();
+        //_this.loadAdmin();
+        //_this.loadGuide();
+        //_this.loadMapCoordinates();
+        //_this.loadPlace();
+        FormMainMap mainMap = new FormMainMap();
+        mainMap.setVisible(true);
     }
     
     public void addCoordinates(int x, int y, int place_id, String user)
