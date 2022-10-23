@@ -7,6 +7,7 @@ package schoolmapping;
 import java.sql.DriverManager;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -141,9 +142,6 @@ public class FormMainMap extends javax.swing.JFrame {
             
             while(_db.resultSet.next())
             {
-                //System.out.println("Place ID: " + resultSet.getInt("place_id"));
-                //System.out.println("Name: "+resultSet.getString("place_name"));
-                //System.out.println("URL: "+resultSet.getString("place_url"));
                 String place = _db.resultSet.getString("place_name");
                 cmbPlace.addItem(place);
             }
@@ -151,7 +149,7 @@ public class FormMainMap extends javax.swing.JFrame {
             System.out.println("Data Loaded!");
         }catch(Exception e)
         {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
     }
     

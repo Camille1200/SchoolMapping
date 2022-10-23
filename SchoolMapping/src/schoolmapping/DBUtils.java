@@ -61,16 +61,17 @@ public class DBUtils {
         }
     }
     
-    public void addGuide(int placeID, String instruction, String added_by)
+    public void addGuide(int placeID, int instructionNo, String instruction, String added_by)
     {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");  
             connection = DriverManager.getConnection(url, userName, passWord);
-            query = "INSERT INTO guide (place_id, instruction_no, instruction, added_by, datecreated)  VALUES (?, 1, ?, ?, now());";
+            query = "INSERT INTO guide (place_id, instruction_no, instruction, added_by, datecreated)  VALUES (?, ?, ?, ?, now());";
             statement = connection.prepareStatement(query);
             statement.setInt(1, placeID);
-            statement.setString(2, instruction);
-            statement.setString(3, added_by);
+            statement.setInt(2, instructionNo);
+            statement.setString(3, instruction);
+            statement.setString(4, added_by);
             statement.executeUpdate();
              System.out.println("Guide added!");
              connection.close();

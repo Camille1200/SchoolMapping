@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2022 at 10:17 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Oct 23, 2022 at 03:24 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,9 +43,9 @@ CREATE TABLE `guide` (
 --
 
 INSERT INTO `guide` (`guide_id`, `place_id`, `instruction_no`, `instruction`, `datecreated`, `dateupdated`, `added_by`, `updated_by`) VALUES
-(1, 1, 1, 'Go to school', '2022-10-20 14:20:34', NULL, 'john', NULL),
-(2, 2, 2, 'go home', '2022-10-20 14:20:45', '2022-10-20 18:01:10', 'john', 'john'),
-(3, 1, 1, 'Go to school', '2022-10-21 03:42:09', NULL, 'john', NULL);
+(1, 1, 3, 'Go to school', '2022-10-23 07:01:47', '2022-10-23 09:23:39', 'oliverjohns', '4'),
+(2, 0, 3, 'Go to fourth floor', '2022-10-23 08:55:34', NULL, '4', NULL),
+(3, 2, 2, 'Third', '2022-10-23 09:07:08', '2022-10-23 09:23:01', '4', '4');
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,8 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`place_id`, `place_name`, `place_url`, `datecreated`, `dateupdated`, `added_by`, `updated_by`) VALUES
-(1, 'Washroom', 'https://www.facebook.com', '2022-10-20 14:27:11', '2022-10-20 18:10:55', 'john', 'john');
+(1, 'Washrooms', 'https://www.facebook.com', '2022-10-20 14:27:11', '2022-10-23 05:20:16', 'john', '4'),
+(2, '44', '44', '2022-10-23 05:11:53', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,11 @@ CREATE TABLE `superadmin` (
 --
 
 INSERT INTO `superadmin` (`admin_id`, `admin_name`, `admin_handle`, `admin_password`, `datecreated`, `dateupdated`, `added_by`, `updated_by`) VALUES
-(1, 'John', 'johndoe', 'OkayNo.1ito', '2022-10-20 14:36:06', '2022-10-21 03:11:22', 'john', 'john');
+(1, 'John', 'johndoe', 'OkayNo.1ito', '2022-10-20 14:36:06', '2022-10-21 03:11:22', 'john', 'john'),
+(2, 'olivers', 'oliverjohns', '123', '2022-10-22 21:39:07', '2022-10-23 04:29:57', 'john', 'oliverjohn'),
+(3, 'John Okay', 'okay', '', '2022-10-23 03:19:23', '2022-10-23 04:34:24', NULL, 'oliverjohns'),
+(4, '33', '23', '123', '2022-10-23 04:00:05', NULL, 'oliverjohn', NULL),
+(5, '4', '4', '4', '2022-10-23 04:02:36', NULL, 'oliverjohn', NULL);
 
 --
 -- Indexes for dumped tables
@@ -167,13 +172,13 @@ ALTER TABLE `map_coordinates`
 -- AUTO_INCREMENT for table `place`
 --
 ALTER TABLE `place`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `superadmin`
 --
 ALTER TABLE `superadmin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
