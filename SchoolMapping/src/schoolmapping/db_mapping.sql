@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2022 at 03:24 AM
+-- Generation Time: Oct 25, 2022 at 01:12 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -43,9 +43,21 @@ CREATE TABLE `guide` (
 --
 
 INSERT INTO `guide` (`guide_id`, `place_id`, `instruction_no`, `instruction`, `datecreated`, `dateupdated`, `added_by`, `updated_by`) VALUES
-(1, 1, 3, 'Go to school', '2022-10-23 07:01:47', '2022-10-23 09:23:39', 'oliverjohns', '4'),
-(2, 0, 3, 'Go to fourth floor', '2022-10-23 08:55:34', NULL, '4', NULL),
-(3, 2, 2, 'Third', '2022-10-23 09:07:08', '2022-10-23 09:23:01', '4', '4');
+(1, 1, 1, 'From the system face to the right side and you\'ll see the admission area.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(2, 2, 1, 'Way 1 : From the System face at the back and walk straight ahead the entrance of the auditorium is beside the stairs.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(3, 3, 1, 'Way 2 : From the System face to the right side and walk ahead and then turn left and you\'ll see the elevator beside the elevator right side you\'ll see an entrance to the auditorium.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(4, 4, 1, 'From the system face to the left side and you\'ll see the Cashier beside the Registrar.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(5, 5, 1, 'From the system face to the back and to right and you\'ll see the DSA Office near at President\'s Office', '2022-10-25 06:41:27', NULL, '4', NULL),
+(6, 6, 1, 'From the system face to the back and to Left and you\'ll see the Meeting Room near at Cashier.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(7, 7, 1, 'From the system face to the back and to Left and you\'ll see the President\'s Office.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(8, 8, 1, 'From the system face to the left side and you\'ll see the Registrar.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(9, 9, 1, 'From the lobby, turn left up to the corner, then turn right and, elevator or stairs can be used as mode of way to be on the 2nd floor.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(10, 10, 1, 'From the System face to the right side and walk ahead and then turn left and you\'ll see the elevator beside it walk ahead and you\'ll see a stair going up.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(11, 10, 2, 'When you reach the Second Floor you\'ll see an open space.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(12, 10, 3, 'Walk ahead and then turn right and you\'ll see the canteen.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(13, 11, 1, 'From the System face to the right side and walk ahead and then turn left and you\'ll see the elevator beside it walk ahead and you\'ll see a stair going up.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(14, 11, 2, 'When you reach the Second Floor you\'ll see an open space.', '2022-10-25 06:41:27', NULL, '4', NULL),
+(15, 11, 3, 'Walk ahead and then turn Left and you\'ll another open space or open area.', '2022-10-25 06:41:27', NULL, '4', NULL);
 
 -- --------------------------------------------------------
 
@@ -93,8 +105,17 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`place_id`, `place_name`, `place_url`, `datecreated`, `dateupdated`, `added_by`, `updated_by`) VALUES
-(1, 'Washrooms', 'https://www.facebook.com', '2022-10-20 14:27:11', '2022-10-23 05:20:16', 'john', '4'),
-(2, '44', '44', '2022-10-23 05:11:53', NULL, NULL, NULL);
+(1, 'Admission', 'Admission.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(2, 'Auditorium Way 1', 'Auditorium Way 1.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(3, 'Auditorium Way 2', 'Auditorium Way 2.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(4, 'Cashier', 'Cashier.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(5, 'DSA Office', 'DSA OFFICE.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(6, 'Meeting Room', 'Meeting Room.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(7, 'President Office', 'President Office.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(8, 'Registrar', 'Registrar.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(9, 'Way to 2nd', 'Way to 2nd.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(10, '2nd Canteen', '2nd Canteen.png', '2022-10-25 06:29:21', NULL, '4', NULL),
+(11, '2nd Open Area', '2nd Open Area.png', '2022-10-25 06:29:21', NULL, '4', NULL);
 
 -- --------------------------------------------------------
 
@@ -160,7 +181,7 @@ ALTER TABLE `superadmin`
 -- AUTO_INCREMENT for table `guide`
 --
 ALTER TABLE `guide`
-  MODIFY `guide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `guide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `map_coordinates`
@@ -172,7 +193,7 @@ ALTER TABLE `map_coordinates`
 -- AUTO_INCREMENT for table `place`
 --
 ALTER TABLE `place`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `superadmin`
